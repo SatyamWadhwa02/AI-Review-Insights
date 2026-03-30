@@ -12,7 +12,12 @@ It is stable and scraping-friendly
 No bot protection (unlike Amazon)
 Ideal for demonstrating scraping + LLM pipeline
 📁 Project Structure
-review_scraper/ ├── main.py # Main script (scraper + Gemini analysis) ├── requirements.txt # Dependencies ├── README.md # Documentation ├── scraper.log # Logs (auto-generated) └── output.csv # Output file
+review_scraper/ 
+├── main.py # Main script (scraper + Gemini analysis) 
+├── requirements.txt # Dependencies
+├── README.md # Documentation 
+├── scraper.log # Logs (auto-generated) 
+└── output.csv # Output file
 
 ⚙️ Setup
 1. Install dependencies
