@@ -1,76 +1,87 @@
 # AI-Review-Insights
 Python-based web scraper + LLM pipeline for automated sentiment analysis and structured insights generation.
-📊 Product Review Scraper with Gemini Sentiment Analysis
-A Python application that scrapes product data (used as review-like content), analyzes it using Google Gemini API, and stores the results in a CSV file.
+📊 Product Review Scraper 
+A Python application that scrapes product data (used as review-like content), analyzes it , and stores the results in a CSV file.
 
-🌐 Data Source
-https://books.toscrape.com/catalogue/page-1.html
+cat << 'EOF' > README.md
 
-This site is used because:
 
-It is stable and scraping-friendly
-No bot protection (unlike Amazon)
-Ideal for demonstrating scraping + LLM pipeline
-📁 Project Structure
-review_scraper/ 
-├── main.py # Main script (scraper + Gemini analysis) 
-├── requirements.txt # Dependencies
-├── README.md # Documentation 
-├── scraper.log # Logs (auto-generated) 
-└── output.csv # Output file
+A Python project that scrapes product data and uses Google Gemini API to perform sentiment analysis and generate insights.
 
-⚙️ Setup
-1. Install dependencies
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the repository
+
+git clone https://github.com/yourusername/gemini-review-analyzer.git
+cd gemini-review-analyzer
+
+---
+
+### 2. Install dependencies
+
 pip install -r requirements.txt
 
-2. Set API Key (IMPORTANT)
-Windows PowerShell: $env:GEMINI_API_KEY="your_api_key_here"
+---
 
-Linux / Mac: export GEMINI_API_KEY="your_api_key_here"
+### 3. Set your Gemini API key
 
-▶️ Run the Project
+Windows (PowerShell):
+$env:GEMINI_API_KEY="your_api_key_here"
+
+Linux / Mac:
+export GEMINI_API_KEY="your_api_key_here"
+
+---
+
+### 4. Run the application
+
 python main.py
 
-📦 Output
+---
+
+## 📦 Output
+
+After running, a file will be generated:
+
 output.csv
 
-📊 Output Columns
-review_id → Book title
-author → Source (catalogue)
-rating → None
-title → Book title
-date → Scraped date
-verified → False
-body → Generated text
-sentiment → positive / neutral / negative
-score → 0–1
-summary → One-line summary
+---
 
-🧠 Gemini Integration
-Uses Google Gemini API (google-genai)
-Model: gemini-2.0-flash
-Converts text → structured JSON
-Extracts sentiment, score, summary
-🛠️ Features
-Web scraping using BeautifulSoup
-Retry mechanism for failed requests
-User-agent rotation
-Structured LLM output
-CSV export using pandas
-⚠️ Limitations
-Data is simulated (books instead of real reviews)
-Gemini may sometimes return invalid JSON
-Processing is sequential (can be slow)
-🔒 Security
-Never hardcode API keys
-Always use environment variables
-Regenerate key if exposed
-🚀 Future Improvements
-Add charts (matplotlib / seaborn)
-Streamlit dashboard
-Async scraping
-Real e-commerce scraping with proxies
-✅ Pipeline Overview
-Scraper → Data → Gemini API → Sentiment Analysis → CSV Output
+## 📊 What the Output Contains
 
-Simple, clean, and ready for extension. EOF
+Each row includes:
+- review_id
+- title
+- body
+- sentiment (positive / neutral / negative)
+- score (0–1)
+- summary
+
+---
+
+## ⚠️ Important Notes
+
+- Make sure your API key is valid
+- Do not share your API key publicly
+- Ensure dependencies are installed
+
+---
+
+## 🛠 Requirements
+
+- Python 3.8+
+- Internet connection
+- Gemini API key
+
+---
+
+## ✅ Pipeline
+
+Scraping → Data Processing → Gemini API → Sentiment Analysis → CSV Output
+
+---
+
+Simple and ready to run.
+EOF
